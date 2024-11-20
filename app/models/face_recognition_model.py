@@ -3,7 +3,7 @@ import pickle
 import os
 
 # Load the face recognition model
-def load_model(filename='app/face_model.pkl'):
+def load_model(filename='app/augmented_face_recognition_model.pkl'):
     if os.path.exists(filename):
         with open(filename, 'rb') as file:
             return pickle.load(file)

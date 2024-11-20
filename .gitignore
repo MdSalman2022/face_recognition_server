@@ -47,3 +47,7 @@ coverage.xml
 venv/
 env/
 .env
+
+# Ignore specific files
+face_model.pkl
+shape_predictor_68_face_landmarks.dat
