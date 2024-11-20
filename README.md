@@ -18,5 +18,5 @@ This project is a FastAPI-based backend for processing images to detect faces. I
 
 1. **Clone the repository**:
    ```sh
-   git clone <repository_url>
+   git clone https://github.com/MdSalman2022/face_recognition_server.git
    cd face_recognition_server
