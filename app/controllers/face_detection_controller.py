@@ -41,6 +41,7 @@ def process_image(image_path: str):
             pred_label = clf.predict([face_encoding])[0]
             pred_name = le.inverse_transform([pred_label])[0]
             studentId = pred_name 
+            print(f"Predicted: {pred_name}")
 
         return {
             "status": "success",

@@ -1,10 +1,11 @@
 import os
 import shutil
 from datetime import datetime
-from fastapi import APIRouter, UploadFile, File, HTTPException
+from fastapi import APIRouter, UploadFile, File, HTTPException, Form
 from fastapi.responses import JSONResponse
 from pymongo import MongoClient
 from app.controllers.face_detection_controller import process_image
+from pydantic import BaseModel
 
 router = APIRouter()
 
@@ -47,3 +48,17 @@ async def detect_faces(file: UploadFile = File(...)):
         # Clean up the temporary file
         if os.path.exists(image_file_path):
             os.remove(image_file_path)
+
+
+# @router.post("/test/")
+# async def test_endpoint(test: str = Form(...)):
+#     return {"message": f"Received data: {test}"}
+
+
+class StudentIdRequest(BaseModel):
+    studentId: str
+
+@router.post("/studentId/")
+async def test_endpoint(request: StudentIdRequest):
+    print(f"Received studentId: {request.studentId}")
+    return {"message": f"Received studentId: {request.studentId}"}
